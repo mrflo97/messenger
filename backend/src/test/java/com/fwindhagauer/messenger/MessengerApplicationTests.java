@@ -1,4 +1,4 @@
-package com.messenger.messenger;
+package com.fwindhagauer.messenger;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
