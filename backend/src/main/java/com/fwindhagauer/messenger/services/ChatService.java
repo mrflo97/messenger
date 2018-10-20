@@ -6,5 +6,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ChatService extends BaseService<Chat, ChatRepository> {
-
 }

@@ -6,4 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService extends BaseService<User, UserRepository> {
+	public User findByName(String name){
+		return this.concreteRepository.findUserByName(name);
+	}
 }

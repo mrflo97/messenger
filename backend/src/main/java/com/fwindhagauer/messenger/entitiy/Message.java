@@ -1,7 +1,7 @@
 package com.fwindhagauer.messenger.entitiy;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -10,10 +10,11 @@ import javax.persistence.*;
 public class Message extends BaseEntity {
 	private String text;
 
-	private String sender;
+	private User sender;
 
-	@JsonBackReference
 	private Chat chat;
+
+	private int senderUserId = -1;
 
 	public Message(){
 		super();
@@ -27,14 +28,6 @@ public class Message extends BaseEntity {
 		this.text = text;
 	}
 
-	@Column(name = "sender")
-	public String getSender() {
-		return sender;
-	}
-	public void setSender(String sender) {
-		this.sender = sender;
-	}
-
 	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "chat_id", referencedColumnName = "id")
@@ -43,5 +36,22 @@ public class Message extends BaseEntity {
 	}
 	public void setChat(Chat chat) {
 		this.chat = chat;
+	}
+
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "sender_id")
+	public User getSender() {
+		return sender;
+	}
+	public void setSender(User sender) {
+		this.sender = sender;
+	}
+
+	public int getSenderUserId() {
+		return senderUserId;
+	}
+	public void setSenderUserId(int senderUserId) {
+		this.senderUserId = senderUserId;
 	}
 }

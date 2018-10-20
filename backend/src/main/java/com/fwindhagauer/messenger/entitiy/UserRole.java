@@ -1,5 +1,7 @@
 package com.fwindhagauer.messenger.entitiy;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
