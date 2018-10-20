@@ -12,7 +12,7 @@ import java.util.List;
 @MappedSuperclass
 public abstract class BaseService<TEntity extends BaseEntity, TRepository extends BaseRepository<TEntity>> {
 	@Autowired
-	private TRepository concreteRepository;
+	protected TRepository concreteRepository;
 
 	public List<TEntity> findAll() {
 		return this.concreteRepository.findAll();

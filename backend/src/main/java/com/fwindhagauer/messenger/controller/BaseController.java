@@ -14,7 +14,7 @@ import java.util.List;
 
 @MappedSuperclass
 public abstract class BaseController<TService extends BaseService, TEntity extends BaseEntity> {
-	protected TService concreteService;
+	private TService concreteService;
 
 	@Autowired
 	public BaseController(TService concreteService) {

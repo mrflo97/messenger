@@ -13,11 +13,14 @@ public class UserRole extends BaseEntity {
 		this.name = name;
 	}
 
+	public UserRole(){
+		super();
+	}
+
 	@Column(name = "name", nullable = false)
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
